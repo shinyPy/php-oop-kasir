@@ -18,7 +18,7 @@ if (isset($_SESSION['user'])) {
         $cookie_value = json_encode($_SESSION['user']);
         setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
     }
-    echo "<script> window.location.href = '../dashboard' </script>";
+    echo "<script> window.location.href = '../master/users/' </script>";
     exit;
 }
 

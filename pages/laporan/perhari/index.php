@@ -1,9 +1,9 @@
 <?php $title = "Laporan Penjualan" ?>
-<?php include('../../layout/header.php'); ?>
-<?php include('../../layout/navbar.php'); ?>
-<?php include('../../layout/sidebar.php'); ?>
+<?php include('../../../layout/header.php'); ?>
+<?php include('../../../layout/navbar.php'); ?>
+<?php include('../../../layout/sidebar.php'); ?>
 <?php
-include('../../function/config.php');
+include('../../../function/config.php');
 $db = new DB();
 ?>
 
@@ -68,7 +68,7 @@ $db = new DB();
 
 </main>
 <!-- End #main -->
-<?php include('../../layout/footer.php'); ?>
+<?php include('../../../layout/footer.php'); ?>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
     const tanggalInput = document.getElementById("hari-tanggal");

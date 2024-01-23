@@ -1,5 +1,5 @@
 <?php
-include('../../../function/config.php');
+include('../../../../function/config.php');
 $db = new DB();
 ?>
 

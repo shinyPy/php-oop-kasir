@@ -24,9 +24,9 @@ if (isset($_GET['action'])) {
                         'sub_total' => $productDetails['sub_total'],
                     ];
 
-                    $selectProduk = $db->select('produk', 'stok', 'id = ' . $productDetails['id_produk']);
+                    $selectProduk = $db->select('produk_2', 'stok', 'id = ' . $productDetails['id_produk']);
                     $jumlahBaru = ($selectProduk[0]['stok'] - $productDetails['jumlah']);
-                    $updateStok = $db->update('produk', ['stok' => $jumlahBaru], "id = " . $productDetails['id_produk']);
+                    $updateStok = $db->update('produk_2', ['stok' => $jumlahBaru], "id = " . $productDetails['id_produk']);
 
                     $insertDetailPenjualan = $db->insert('detail_penjualan', $fillableDetailPenjualan);
 
@@ -51,7 +51,7 @@ if (isset($_GET['action'])) {
                 $detailsPenjualanData = $db->select('detail_penjualan', "*", "id_penjualan = $id");
 
                 $productIds = array_column($detailsPenjualanData, 'id_produk');
-                $detailsProdukData = $db->select('produk', '*', "id IN (" . implode(',', $productIds) . ")");
+                $detailsProdukData = $db->select('produk_2', '*', "id IN (" . implode(',', $productIds) . ")");
 
                 $delete = $db->delete("detail_penjualan", "id_penjualan = '$id'");
                 $delete2 = $db->delete("penjualan", "id = $id");
@@ -67,7 +67,7 @@ if (isset($_GET['action'])) {
                         $currentStock = $productDetails['stok'];
 
                         $newStock = $currentStock + $quantity;
-                        $updateStok = $db->update('produk', ['stok' => $newStock], "id = $productId");
+                        $updateStok = $db->update('produk_2', ['stok' => $newStock], "id = $productId");
 
                         if ($updateStok === false) {
                             echo json_encode(['success' => false, 'message' => 'Gagal Mengembalikan Stok']);
@@ -118,7 +118,7 @@ if (isset($_GET['action'])) {
         case 'produk_detail':
             if (isset($_GET['id'])) {
                 $id = $_GET['id'];
-                $data = $db->select('detail_penjualan', '*', "id_penjualan = '$id'", 'produk', 'detail_penjualan.id_produk = produk.id');
+                $data = $db->select('detail_penjualan', '*', "id_penjualan = '$id'", 'produk_2', 'detail_penjualan.id_produk = produk_2.id');
                 if (count($data) > 0) {
                     echo json_encode(['success' => true, 'message' => 'Berhasil Didapatkan', 'data' => $data]);
                     exit;
@@ -128,8 +128,8 @@ if (isset($_GET['action'])) {
             }
             break;
 
-        case 'produk':
-            $produkData = $db->select('produk', '*', '', '', '', 'nama', 'ASC');
+        case 'produk_2':
+            $produkData = $db->select('produk_2', '*', '', '', '', 'nama', 'ASC');
 
             echo json_encode($produkData);
             break;

@@ -51,7 +51,6 @@ $db = new DB();
                                             <td><?= $value['nama_pelanggan'] ?></td>
                                             <td>
                                                 <div class="d-flex gap-1">
-                                                    <button id="btn-cetak" data-id="<?= $value['id'] ?>" class="btn btn-success btn-sm"><i class="bi bi-printer text-white"></i></button>
                                                     <button id="btn-detail" data-id="<?= $value['id'] ?>" class="btn btn-info btn-sm"><i class="bi bi-list-ul text-white"></i></button>
                                                     <button id="btn-delete" data-id="<?= $value['id'] ?>" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
                                                 </div>
@@ -125,7 +124,7 @@ $db = new DB();
 
         function fetchData() {
             $.ajax({
-                url: 'api.php?action=produk',
+                url: 'api.php?action=produk_2',
                 type: 'GET',
                 dataType: 'json',
                 success: function(data) {
@@ -145,11 +144,11 @@ $db = new DB();
                 var row = `<tr>
                                 <td>${index + 1}</td>
                                 <td>${value.nama}</td>
-                                <td id="produk-list-harga-${value.id}" data-harga="${value.harga}">Rp ${new Intl.NumberFormat('id-ID').format(value.harga)}</td>
+                                <td id="produk-list-harga-${value.id}" data-harga="${value.harga_ecer}">Rp ${new Intl.NumberFormat('id-ID').format(value.harga_ecer)}</td>
                                 <td id="produk-list-stok-${value.id}">${value.stok}</td>
                                 <td>
                                     <div class="d-flex gap-1">
-                                        <button id="btn-add" data-harga="${value.harga}" data-nama="${value.nama}" data-id="${value.id}" class="btn btn-success btn-sm"><i class="bi bi-cart text-white"></i></button>
+                                        <button id="btn-add" data-harga="${value.harga_ecer}" data-nama="${value.nama}" data-id="${value.id}" class="btn btn-success btn-sm"><i class="bi bi-cart text-white"></i></button>
                                     </div>
                                 </td>
                             </tr>`;
@@ -167,7 +166,7 @@ $db = new DB();
         var data_produk;
 
         $.ajax({
-            url: `api.php?action=produk&id=${id}`,
+            url: `api.php?action=produk_2&id=${id}`,
             type: 'GET',
             dataType: 'json',
             success: function(res) {

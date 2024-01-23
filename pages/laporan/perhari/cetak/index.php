@@ -1,5 +1,5 @@
 <?php
-include('../../../function/config.php');
+include('../../../../function/config.php');
 $db = new DB();
 ?>
 
@@ -28,8 +28,9 @@ $db = new DB();
                 </tr>
             </thead>
             <tbody id="laporan-list">
-                <?php foreach ($db->select('penjualan', '*', '', '', '', 'tanggal', 'DESC') as $index => $value) : ?>
-                    <tr>
+            <?php 
+                                $currentDate = date('Y-m-d');
+                                foreach ($db->select('penjualan', '*', "DATE(tanggal) = '$currentDate'", '', '', 'tanggal', 'DESC') as $index => $value) : ?>                    <tr>
                         <td><?= ($index + 1) ?></td>
                         <td>KSRID/<?= $value['id'] ?></td>
                         <td><?= date('Y-m-d', strtotime($value['tanggal'])) ?></td>

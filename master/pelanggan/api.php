@@ -11,7 +11,6 @@ if (isset($_GET['action'])) {
                 $fillable = [
                     'nama' => $_POST['nama'],
                     'alamat' => $_POST['alamat'],
-                    'no_telp' => $_POST['no_telp'],
                 ];
 
                 $insert = $db->insert('pelanggan', $fillable);
@@ -31,7 +30,6 @@ if (isset($_GET['action'])) {
                 $fillable = [
                     'nama' => $_POST['nama'],
                     'alamat' => $_POST['alamat'],
-                    'no_telp' => $_POST['no_telp'],
                 ];
 
                 $insert = $db->update('pelanggan', $fillable, "id = '$id'");

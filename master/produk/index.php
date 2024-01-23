@@ -34,17 +34,19 @@ $db = new DB();
                                     <tr>
                                         <th>No.</th>
                                         <th>Nama</th>
-                                        <th>Harga</th>
+                                        <th>Harga Partai</th>
+                                        <th>Harga Ecer</th>
                                         <th>Stok</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach ($db->select('produk', '*') as $index => $value) : ?>
+                                    <?php foreach ($db->select('produk_2', '*') as $index => $value) : ?>
                                         <tr>
                                             <td><?= ($index + 1) ?></td>
                                             <td><?= $value['nama'] ?></td>
-                                            <td><?= 'Rp ' . number_format($value['harga'], 0, ',', '.'); ?></td>
+                                            <td><?= 'Rp ' . number_format($value['harga_partai'], 0, ',', '.'); ?></td>
+                                            <td><?= 'Rp ' . number_format($value['harga_ecer'], 0, ',', '.'); ?></td>
                                             <td><?= $value['stok'] ?></td>
                                             <td>
                                                 <div class="d-flex gap-1">

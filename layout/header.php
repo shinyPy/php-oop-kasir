@@ -80,7 +80,7 @@ function currentPath($path)
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css" />
     <!-- Template Main CSS File -->
     <link href="<?= assets('css/style.css') ?>" rel="stylesheet" />
-    <style>
+    <!-- <style>
         .preloader {
             position: fixed;
             top: 0;
@@ -94,7 +94,7 @@ function currentPath($path)
             align-items: center;
             z-index: 9999;
         }
-    </style>
+    </style> -->
 </head>
 
 <body>

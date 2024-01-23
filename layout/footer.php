@@ -3,10 +3,6 @@
     <div class="copyright">
         &copy; Copyright <strong><span>Kasir 7</span></strong>. All Rights Reserved
     </div>
-    <div class="credits">
-        Designed by
-        <a href="https://github.com/Farreru">Muhammad Adit Farrel</a>
-    </div>
 </footer>
 <!-- End Footer -->
 
@@ -24,7 +20,6 @@
 
 <!-- Template Main JS File -->
 <script src="<?= assets('js/main.js') ?>"></script>
-<script src="<?= assets('js/demo.js') ?>"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>

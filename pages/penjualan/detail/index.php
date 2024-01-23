@@ -38,7 +38,7 @@ $db = new DB();
                                 </thead>
                                 <tbody id="produk-list">
                                     <?php $id = $_GET['id']; ?>
-                                    <?php foreach ($db->select('detail_penjualan', '*', "id_penjualan = '$id'", 'produk', 'detail_penjualan.id_produk = produk.id') as $index => $value) : ?>
+                                    <?php foreach ($db->select('detail_penjualan', '*', "id_penjualan = '$id'", 'produk_2', 'detail_penjualan.id_produk = produk_2.id') as $index => $value) : ?>
                                         <tr>
                                             <td><?= ($index + 1) ?></td>
                                             <td><?= $value['nama'] ?></td>

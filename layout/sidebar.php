@@ -1,12 +1,7 @@
  <!-- ======= Sidebar ======= -->
  <aside id="sidebar" class="sidebar">
      <ul class="sidebar-nav" id="sidebar-nav">
-         <li class="nav-item">
-             <a class="nav-link <?= (!currentPath('dashboard') ? 'collapsed' : '') ?>" href="<?= route('dashboard') ?>">
-                 <i class="bi bi-grid"></i>
-                 <span>Dashboard</span>
-             </a>
-         </li>
+
          <!-- End Dashboard Nav -->
 
          <li class="nav-item">
@@ -36,20 +31,34 @@
          </li>
          <!-- End Components Nav -->
 
+       
          <li class="nav-heading">Pages</li>
 
-         <li class="nav-item">
-             <a class="nav-link <?= (!currentPath('pages/penjualan')) ? 'collapsed' : '' ?>" href="<?= route('pages/penjualan') ?>">
-                 <i class="bi bi-cart"></i>
-                 <span>Penjualan</span>
-             </a>
-         </li>
-         <li class="nav-item">
-             <a class="nav-link <?= (!currentPath('pages/laporan')) ? 'collapsed' : '' ?>" href="<?= route('pages/laporan') ?>">
-                 <i class="bi bi-envelope-paper"></i>
-                 <span>Laporan Penjualan</span>
-             </a>
-         </li>
-     </ul>
+        <li class="nav-item">
+            <a class="nav-link <?= (!currentPath('pages/penjualan')) ? 'collapsed' : '' ?>" href="<?= route('pages/penjualan') ?>">
+                <i class="bi bi-cart"></i>
+                <span>Penjualan</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a id="laporan-penjualan-button" class="nav-link <?= (!currentPath('pages/laporan')) ? 'collapsed' : '' ?>" data-bs-target="#laporan-penjualan-nav" data-bs-toggle="collapse" href="#" aria-expanded="<?= (!currentPath('pages/laporan')) ? 'false' : 'true' ?>">
+                <i class="bi bi-envelope-paper"></i>
+                <span>Laporan Penjualan</span><i class="bi bi-chevron-down ms-auto"></i>
+            </a>
+            <ul id="laporan-penjualan-nav" class="nav-content collapse <?= (!currentPath('pages/laporan')) ? 'collapse' : 'show' ?>" data-bs-parent="#sidebar-nav">
+                <li>
+                    <a class="<?= currentPath('pages/laporan/perhari') ? 'active' : '' ?>" href="<?= route('pages/laporan/perhari') ?>">
+                        <i class="bi bi-circle"></i><span>Penjualan Perhari</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="<?= currentPath('pages/laporan/keseluruhan') ? 'active' : '' ?>" href="<?= route('pages/laporan/keseluruhan') ?>">
+                        <i class="bi bi-circle"></i><span>Penjualan Keseluruhan</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
  </aside>
  <!-- End Sidebar-->

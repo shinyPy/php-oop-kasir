@@ -10,11 +10,12 @@ if (isset($_GET['action'])) {
 
                 $fillable = [
                     'nama' => $_POST['nama'],
-                    'harga' => $_POST['harga'],
+                    'harga_partai' => $_POST['harga_partai'],
+                    'harga_ecer' => $_POST['harga_ecer'],
                     'stok' => $_POST['stok'],
                 ];
 
-                $insert = $db->insert('produk', $fillable);
+                $insert = $db->insert('produk_2', $fillable);
                 if ($insert !== false) {
                     echo json_encode(['success' => true, 'message' => 'Berhasil Menambahkan Data']);
                     exit;
@@ -30,11 +31,11 @@ if (isset($_GET['action'])) {
 
                 $fillable = [
                     'nama' => $_POST['nama'],
-                    'harga' => $_POST['harga'],
+                    'harga_partai' => $_POST['harga_partai'],
+                    'harga_ecer' => $_POST['harga_ecer'],
                     'stok' => $_POST['stok'],
                 ];
-
-                $insert = $db->update('produk', $fillable, "id = '$id'");
+                $insert = $db->update('produk_2', $fillable, "id = '$id'");
                 if ($insert !== false) {
                     echo json_encode(['success' => true, 'message' => 'Berhasil Perubahan Data']);
                     exit;
@@ -47,7 +48,7 @@ if (isset($_GET['action'])) {
         case 'delete':
             if (isset($_GET['id'])) {
                 $id = $_GET['id'];
-                $delete = $db->delete("produk", "id = '$id'");
+                $delete = $db->delete("produk_2", "id = '$id'");
                 if ($delete !== false) {
                     echo json_encode(['success' => true, 'message' => 'Berhasil Dihapus']);
                     exit;
@@ -60,7 +61,7 @@ if (isset($_GET['action'])) {
         case 'show':
             if (isset($_GET['id'])) {
                 $id = $_GET['id'];
-                $data = $db->select("produk", '*', "id = '$id'");
+                $data = $db->select("produk_2", '*', "id = '$id'");
                 if (count($data) > 0) {
                     echo json_encode(['success' => true, 'message' => 'Berhasil Didapatkan', 'data' => $data[0]]);
                     exit;

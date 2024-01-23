@@ -14,8 +14,13 @@
                         <div class="invalid-feedback">Mohon inputkan nama.</div>
                     </div>
                     <div class="col-lg-6">
-                        <label for="harga">Harga</label>
-                        <input type="harga" name="harga" id="harga" class="form-control" required>
+                        <label for="harga_partai">Harga Partai</label>
+                        <input type="harga_partai" name="harga_partai" id="harga_partai" class="form-control" required>
+                        <div class="invalid-feedback">Mohon inputkan harga.</div>
+                    </div>
+                    <div class="col-lg-6">
+                        <label for="harga_eceri">Harga Ecer</label>
+                        <input type="harga_ecer" name="harga_ecer" id="harga_eceri" class="form-control" required>
                         <div class="invalid-feedback">Mohon inputkan harga.</div>
                     </div>
                     <div class="col-lg-6">

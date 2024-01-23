@@ -18,11 +18,7 @@
                         <input type="text" name="alamat" id="alamat" class="form-control" required>
                         <div class="invalid-feedback">Mohon inputkan alamat.</div>
                     </div>
-                    <div class="col-lg-6">
-                        <label for="no_telp">No. Telp</label>
-                        <input type="number" name="no_telp" id="no_telp" class="form-control" required>
-                        <div class="invalid-feedback">Mohon inputkan no hp.</div>
-                    </div>
+                   
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                         <button type="submit" name="submit" class="btn btn-primary">Submit</button>

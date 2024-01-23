@@ -35,7 +35,6 @@ $db = new DB();
                                         <th>No.</th>
                                         <th>Nama</th>
                                         <th>Alamat</th>
-                                        <th>No. Telp</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -45,7 +44,6 @@ $db = new DB();
                                             <td><?= ($index + 1) ?></td>
                                             <td><?= $value['nama'] ?></td>
                                             <td><?= $value['alamat'] ?></td>
-                                            <td><?= $value['no_telp'] ?></td>
                                             <td>
                                                 <div class="d-flex gap-1">
                                                     <button id="btn-delete" data-id="<?= $value['id'] ?>" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
@@ -136,7 +134,6 @@ $db = new DB();
                     $('#data-id').val(res.data.id);
                     $('#nama').val(res.data.nama);
                     $('#alamat').val(res.data.alamat);
-                    $('#no_telp').val(res.data.no_telp);
 
                     $('#modal-title').text("Edit Data");
                     $('#formModal').modal('show');

@@ -54,15 +54,15 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php foreach ($db->select('produk', '*', "", '', '', 'nama', 'ASC') as $index => $value) : ?>
+                                        <?php foreach ($db->select('produk_2', '*', "", '', '', 'nama', 'ASC') as $index => $value) : ?>
                                             <tr>
                                                 <td><?= ($index + 1) ?></td>
                                                 <td><?= $value['nama'] ?></td>
-                                                <td id="produk-list-harga-<?= $value['id'] ?>" data-harga="<?= $value['harga'] ?>"><?= 'Rp ' . number_format($value['harga'], 0, ',', '.'); ?></td>
+                                                <td id="produk-list-harga-<?= $value['id'] ?>" data-harga="<?= $value['harga_ecer'] ?>"><?= 'Rp ' . number_format($value['harga_ecer'], 0, ',', '.'); ?></td>
                                                 <td id="produk-list-stok-<?= $value['id'] ?>"><?= $value['stok'] ?></td>
                                                 <td>
                                                     <div class="d-flex gap-1">
-                                                        <button id="btn-add" data-harga="<?= $value['harga'] ?>" data-nama="<?= $value['nama'] ?>" data-id="<?= $value['id'] ?>" class="btn btn-success btn-sm"><i class="bi bi-cart text-white"></i></button>
+                                                        <button id="btn-add" data-harga="<?= $value['harga_ecer'] ?>" data-nama="<?= $value['nama'] ?>" data-id="<?= $value['id'] ?>" class="btn btn-success btn-sm"><i class="bi bi-cart text-white"></i></button>
                                                     </div>
                                                 </td>
                                             </tr>
