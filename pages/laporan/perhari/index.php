@@ -69,24 +69,6 @@ $db = new DB();
 </main>
 <!-- End #main -->
 <?php include('../../../layout/footer.php'); ?>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    const tanggalInput = document.getElementById("hari-tanggal");
-    const laporanRows = document.querySelectorAll(".laporan-row");
-
-    tanggalInput.addEventListener("input", function () {
-        const selectedDate = tanggalInput.value;
-        laporanRows.forEach(function (row) {
-            const rowDataTanggal = row.querySelector("td:nth-child(3)").textContent.trim(); // Adjust the index based on your actual structure
-            if (selectedDate !== "" && rowDataTanggal !== selectedDate) {
-                row.style.display = "none";
-            } else {
-                row.style.display = "";
-            }
-        });
-    });
-});
-</script>
 
 <script>
     $(document).ready(function() {
